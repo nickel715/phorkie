@@ -264,7 +264,9 @@ class Repository
      *                        - "delete"
      *                        - "delete-confirm"
      *                        - "display"
+     *                        - "doap"
      *                        - "fork"
+     *                        - "pingback"
      *                        - "revision"
      * @param string  $option Additional link option, e.g. revision number
      * @param boolean $full   Return full URL or normal relative
@@ -285,6 +287,8 @@ class Repository
             $link = '/' . $this->id . '/delete';
         } else if ($type == 'delete-confirm') {
             $link = '/' . $this->id . '/delete/confirm';
+        } else if ($type == 'pingback') {
+            $link = '/' . $this->id . '/pingback';
         } else if ($type == 'revision') {
             $link = '/' . $this->id . '/rev/' . $option;
         } else {
